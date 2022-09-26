@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+<body>
+    {% block content %}
+
+    <div class="login-page">
+        <div class="form">
+          <form method="POST" action="{% url 'login' %}" class="login-form" >
+            {% csrf_token %}
+            
+            <h3 class="mb-4" style="margin-top: -20px; color: rgb(66, 71, 75);">Login</h3>
+            {% for message in messages %}
+            <p id="message">{{message}}</p>
+            {% endfor %}
+
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+
+            <button class="mt-2">login</button>
+            <p class="mt-4" style="margin-bottom: -10px;">Don't have an accaunt <a href="{% url 'register' %}" style="text-decoration: none;">Create Accaunt</a></p>
+          </form>
+
+          <script>
+            var form_fields = document.getElementsByTagName('input')
+            form_fields[1].placeholder='Username';
+            form_fields[2].placeholder='Password';
+          </script>
+        </div>
+      </div>
+
+    {% endblock %}
+</body>

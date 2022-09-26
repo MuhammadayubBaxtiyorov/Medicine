@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+<body>
+    {% block content %}
+
+    <h3 class="title">You can save your health information on this website.</h3>
+
+    <div class="row mt-5">
+        <div class="col-sm-6">
+          <div class="card mt-2 bg-dark">
+            <div class="card-body text-center text-light">
+                <h5 class="card-title text-center mt-2">Create a page for diseases</h5>
+                <p class="card-text mt-3">You can write information about the disease on the your created page.</p>
+                <a href="{% url 'register' %}" class="btn w-50 btn-success mt-2 mb-3">Register</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card mt-2 bg-dark">
+            <div class="card-body text-center text-light">
+              <h5 class="card-title text-center mt-2">Login To The Page</h5>
+              <p class="card-text mt-3">if you have a page you can enter with your login and password.</p>
+              <a href="{% url 'login' %}" class="btn w-50 btn-primary mt-2 mb-3">Go to the profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+</body>
